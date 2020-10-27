@@ -10,9 +10,11 @@
         <TextBox x:Name="tb_for_encryption" HorizontalAlignment="Left" Margin="10,72,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="549" FontFamily="Britannic Bold" FontSize="20" FontStyle="Normal"/>
         <Label x:Name="Header" Content="Шифрование текста при помощи шифра Атбаш " HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" AutomationProperties.Name="При" FontSize="20" FontFamily="Impact" FontWeight="Normal"/>
         <Button x:Name="bt_encryption" Content="Зашифровать" HorizontalAlignment="Left" Margin="624,66,0,0" VerticalAlignment="Top" Height="37" Width="110" FontFamily="Impact" FontSize="15" FontWeight="Normal" Click="bt_encryption_Click"/>
-        <Label x:Name="l_decryption" Content="Зашифрованное сообщение" HorizontalAlignment="Left" Margin="10,133,0,0" VerticalAlignment="Top" FontFamily="Impact" FontSize="20" Visibility="Hidden"/>
-        <TextBox x:Name="tb_for_decryption" HorizontalAlignment="Left" Margin="10,199,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="549" FontSize="20" FontFamily="Britannic Bold" Visibility="Hidden"/>
-        <Button x:Name="bt_decryption" Content="Расшифровать" HorizontalAlignment="Left" Margin="624,193,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.423,0.039" Width="110" Height="37" FontFamily="Impact" FontSize="15" Click="bt_decryption_Click" Visibility="Hidden"/>
+        <Label x:Name="l_decryption" Content="Зашифрованное сообщение" HorizontalAlignment="Left" Margin="10,133,0,0" VerticalAlignment="Top" FontFamily="Impact" FontSize="20" Visibility="Hidden" />
+        <TextBox x:Name="tb_for_decryption" HorizontalAlignment="Left" Margin="10,199,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="549" FontSize="20" FontFamily="Britannic Bold" Visibility="Hidden" />
+        <Button x:Name="bt_decryption" Content="Расшифровать" HorizontalAlignment="Left" Margin="624,193,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.423,0.039" Width="110" Height="37" FontFamily="Impact" FontSize="15" Click="bt_decryption_Click" Visibility="Hidden" />
+        <TextBox x:Name="tb_result" HorizontalAlignment="Left" Margin="10,352,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="549" FontFamily="Britannic Bold" FontSize="20" Visibility="Hidden"/>
+        <Label x:Name="l_encryption" Content="Расшифрованное сообщение" HorizontalAlignment="Left" Margin="10,276,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.519,0.515" FontSize="20" FontFamily="Impact" Visibility="Hidden"/>
 
     </Grid>
 </Window>
