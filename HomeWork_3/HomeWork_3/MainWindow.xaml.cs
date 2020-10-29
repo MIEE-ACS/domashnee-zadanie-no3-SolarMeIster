@@ -43,8 +43,6 @@ namespace HomeWork_3
                     Comparison_with_the_alphabet(num_of_let, i, j, ch, newTextArray, textArray, ch_punctuation);
                 }
             }
-
-
         }
         void Encryment_or_decryment(bool flag)
         {
@@ -63,8 +61,6 @@ namespace HomeWork_3
             if (canConvert == false)
             {
                 bool checkLanguage = false;
-                bool check_registor_rus = false;
-                bool check_registor_eng = false;
                 tb_for_decryption.Visibility = Visibility.Visible;
                 bt_decryption.Visibility = Visibility.Visible;
                 l_decryption.Visibility = Visibility.Visible;
@@ -86,29 +82,32 @@ namespace HomeWork_3
                 for (int i = 0; i < alph_rus.Length; i++)
                     if (first_letter == ch_rus[i] || first_letter == ch_high_registor_rus[i])
                         checkLanguage = true;
-                for (char c = 'A'; c <= 'Z'; c++)
-                    if (first_letter == c)
-                        check_registor_eng = true;
-                for (char c = 'А'; c<= 'Я'; c++)
-                    if(first_letter == c)
-                        check_registor_rus = true;
                 int eng = 24;
                 int rus = 32;
                 for (int i = 0; i < text.Length; i++)
                 {
-                    if (checkLanguage == true && check_registor_rus == false)
-                        Brute_force(flag, alph_rus, ch_rus, textArray, newTextArray, i, rus, ch_punctuation);
-                    else if (checkLanguage == true && check_registor_rus == true)
-                    {
-                        Brute_force(flag, high_registor_rus, ch_high_registor_rus, textArray, newTextArray, i, rus, ch_punctuation);
-                        check_registor_rus = false;
+
+                    for (int j = 0; j < alph_rus.Length; j++) {
+                        if (textArray[i] == ch_high_registor_rus[j])
+                        {
+                            if (checkLanguage == true)
+                            {
+                                Brute_force(flag, high_registor_rus, ch_high_registor_rus, textArray, newTextArray, i, rus, ch_punctuation);
+                            }
+                        } else if (checkLanguage == true)
+                            Brute_force(flag, alph_rus, ch_rus, textArray, newTextArray, i, rus, ch_punctuation);
                     }
-                    else if (checkLanguage == false && check_registor_eng == false)
-                        Brute_force(flag, alph_eng, ch_eng, textArray, newTextArray, i, eng, ch_punctuation);
-                    else if (checkLanguage == false && check_registor_eng == true)
+                    for (int j = 0; j < alph_eng.Length; j++)
                     {
-                        Brute_force(flag, high_registor_eng, ch_high_registor_eng, textArray, newTextArray, i, eng, ch_punctuation);
-                        check_registor_eng = false;
+                        if (textArray[i] == ch_high_registor_eng[j])
+                        {
+                            if (checkLanguage == false)
+                            {
+                                Brute_force(flag, high_registor_eng, ch_high_registor_eng, textArray, newTextArray, i, eng, ch_punctuation);
+                            }
+                        }
+                        else if (checkLanguage == false)
+                            Brute_force(flag, alph_eng, ch_eng, textArray, newTextArray, i, eng, ch_punctuation);
                     }
                 }
                 string newText = "";
